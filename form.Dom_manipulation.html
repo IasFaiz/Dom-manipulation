@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation</title>
+</head>
+
+<body>
+    <form id="form" style="background-color:yellowgreen; padding: 2mm; border-radius: 9px; width:260px; margin: 10px auto;">
+        <label for="name">User Name</label>
+        <input type="text" placeholder="UserName" id="name" style="border-radius: 2px; height: 30px;"><br><br>
+        <label for="email">Your Email</label>
+        <input type="text" placeholder="Email" id="email" style="border-radius: 2px; height: 30px;"><br><br>
+        <label for="password">Your Password</label>
+        <input type="password" placeholder="Password" id="password" style="border-radius: 2px; height: 30px;"><br><br>
+        <label for="submit">Submit Here: </label>
+        <button type="submit" id="submit" style="border-radius: 3px; background-color: rgb(93, 93, 179);height: 30px;">submit</button>
+    </form>
+    <h4 id="h2"  style="width:280px; margin: 10px auto; background-color:rgb(247, 139, 139); padding: 2mm; border-radius: 5px;">Submit when done !</h4>
+    
+</body>
+<script>
+    let form=document.getElementById("form");
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        let name=document.getElementById("name").value;
+        let email=document.getElementById("email").value;
+        let password=document.getElementById("password").value;
+        let string="Hi "+name+"! Your Email is "+email+" . And Your Password is"+password+". Your form is submitted successfully.";
+        alert(string);
+        let string2="Submitted";
+        console.log(string2);
+        console.log(string);
+        document.getElementById("h2").innerHTML=string;
+
+
+
+    });
+
+    
+</script>
+</html>
